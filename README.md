@@ -1,4 +1,4 @@
-v1.0.0.1 of the Xerox NVM Automation Tool.
+v1.0.1.0 of the Xerox NVM Automation Tool.
 
 
 This will emulate all of the necessary key presses needed to open the PWS Diagnostic Tool, open an NVM Script to read, Save the read values, and repeat the process for as many scripts as are present.
