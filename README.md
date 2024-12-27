@@ -21,3 +21,6 @@ I've only tested this using the Versant style PWS Tools. Older tools (like 4110 
 
 
 I'm also working on finishing a tool to automatically clean and convert the database files the PWS Tool saves NVM files into.
+
+Also, please note that while this will automatically save any info you put into it, it's dependent on where the EXE is for some reason (idk probably something dumb with VB Code). 
+So, place the files in their forever homes before adding or setting any info. New versions will grab the settings as long as you place any new files in the same place again.
