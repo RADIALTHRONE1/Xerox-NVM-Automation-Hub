@@ -44,5 +44,8 @@
     <Setting Name="Version" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="NVMModify_LastFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">"C:\"</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -203,6 +203,18 @@ Namespace My
                 Me("Version") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("""C:\""")>  _
+        Public Property NVMModify_LastFolder() As String
+            Get
+                Return CType(Me("NVMModify_LastFolder"),String)
+            End Get
+            Set
+                Me("NVMModify_LastFolder") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

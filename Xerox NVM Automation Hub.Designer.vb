@@ -46,6 +46,7 @@ Partial Class Xerox_NVM_Automation_Hub
         Version_Label = New Label()
         OpenPWSLockSettings = New Button()
         github_Logo = New PictureBox()
+        OpenModifyNVMForm = New Button()
         Group_NVMScript.SuspendLayout()
         Group_DiagnosticTools.SuspendLayout()
         CType(github_Logo, ComponentModel.ISupportInitialize).BeginInit()
@@ -276,13 +277,22 @@ Partial Class Xerox_NVM_Automation_Hub
         ' github_Logo
         ' 
         github_Logo.Cursor = Cursors.Hand
-        github_Logo.Location = New Point(236, 627)
+        github_Logo.Location = New Point(66, 627)
         github_Logo.MaximumSize = New Size(50, 50)
         github_Logo.Name = "github_Logo"
         github_Logo.Size = New Size(23, 23)
         github_Logo.SizeMode = PictureBoxSizeMode.Zoom
         github_Logo.TabIndex = 48
         github_Logo.TabStop = False
+        ' 
+        ' OpenModifyNVMForm
+        ' 
+        OpenModifyNVMForm.Location = New Point(95, 627)
+        OpenModifyNVMForm.Name = "OpenModifyNVMForm"
+        OpenModifyNVMForm.Size = New Size(164, 23)
+        OpenModifyNVMForm.TabIndex = 49
+        OpenModifyNVMForm.Text = "Clean/Compare NVM Reads"
+        OpenModifyNVMForm.UseVisualStyleBackColor = True
         ' 
         ' Xerox_NVM_Automation_Hub
         ' 
@@ -291,6 +301,7 @@ Partial Class Xerox_NVM_Automation_Hub
         AutoSize = True
         AutoSizeMode = AutoSizeMode.GrowAndShrink
         ClientSize = New Size(437, 661)
+        Controls.Add(OpenModifyNVMForm)
         Controls.Add(github_Logo)
         Controls.Add(OpenPWSLockSettings)
         Controls.Add(Version_Label)
@@ -371,5 +382,6 @@ Partial Class Xerox_NVM_Automation_Hub
     Friend WithEvents Version_Label As Label
     Friend WithEvents OpenPWSLockSettings As Button
     Friend WithEvents github_Logo As PictureBox
+    Friend WithEvents OpenModifyNVMForm As Button
 
 End Class

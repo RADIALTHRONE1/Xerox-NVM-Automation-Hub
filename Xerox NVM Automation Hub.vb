@@ -649,4 +649,10 @@ Public Class Xerox_NVM_Automation_Hub
         open_github_repo.StartInfo.FileName = "https://github.com/RADIALTHRONE1/Xerox-NVM-Automation-Hub"
         open_github_repo.Start()
     End Sub
+
+    Private Sub OpenModifyNVMForm_Click(sender As Object, e As EventArgs) Handles OpenModifyNVMForm.Click
+        ModifyNVMForm.Show()
+        Me.Hide()
+        ModifyNVMForm.Focus()
+    End Sub
 End Class
