@@ -16,6 +16,7 @@ Public Class Xerox_NVM_Automation_Hub
     Public PWSLockProcess() As Process = Process.GetProcessesByName("PWSLock")
 
 
+
     Public TimestampFirst As Boolean = True
     Public TimestampCount As Integer = 0
     Public TimestampToWrite As String
@@ -33,6 +34,8 @@ Public Class Xerox_NVM_Automation_Hub
 
         PopulateDiagnosticTools()
         PopulateNVMDirectories()
+
+        github_Logo.Image = My.Resources.ResourceManager.GetObject("github-mark")
 
         If Environment.Is64BitOperatingSystem And Not Debugger.IsAttached Then
             MsgBox("It looks like you're using a 64-Bit Operating System" & vbCrLf &
@@ -627,5 +630,12 @@ Public Class Xerox_NVM_Automation_Hub
         PWSLock_SettingsForm.Show()
         Me.Hide()
         PWSLock_SettingsForm.Focus()
+    End Sub
+
+    Private Sub github_Logo_Click(sender As Object, e As EventArgs) Handles github_Logo.Click
+        Dim open_github_repo = New Process()
+        open_github_repo.StartInfo.UseShellExecute = True
+        open_github_repo.StartInfo.FileName = "https://github.com/RADIALTHRONE1/Xerox-NVM-Automation-Hub"
+        open_github_repo.Start()
     End Sub
 End Class

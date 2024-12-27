@@ -22,6 +22,7 @@ Partial Class Xerox_NVM_Automation_Hub
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Xerox_NVM_Automation_Hub))
         lbxTimestamps = New ListBox()
         lbxAllNVMScripts = New ListBox()
         debugButton = New Button()
@@ -44,9 +45,10 @@ Partial Class Xerox_NVM_Automation_Hub
         DiagnosticTool_Timestamp = New CheckBox()
         Version_Label = New Label()
         OpenPWSLockSettings = New Button()
-        Process1 = New Process()
+        github_Logo = New PictureBox()
         Group_NVMScript.SuspendLayout()
         Group_DiagnosticTools.SuspendLayout()
+        CType(github_Logo, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' lbxTimestamps
@@ -271,17 +273,16 @@ Partial Class Xerox_NVM_Automation_Hub
         OpenPWSLockSettings.Text = "PWS Lock Settings"
         OpenPWSLockSettings.UseVisualStyleBackColor = True
         ' 
-        ' Process1
+        ' github_Logo
         ' 
-        Process1.StartInfo.Domain = ""
-        Process1.StartInfo.LoadUserProfile = False
-        Process1.StartInfo.Password = Nothing
-        Process1.StartInfo.StandardErrorEncoding = Nothing
-        Process1.StartInfo.StandardInputEncoding = Nothing
-        Process1.StartInfo.StandardOutputEncoding = Nothing
-        Process1.StartInfo.UseCredentialsForNetworkingOnly = False
-        Process1.StartInfo.UserName = ""
-        Process1.SynchronizingObject = Me
+        github_Logo.Cursor = Cursors.Hand
+        github_Logo.Location = New Point(236, 627)
+        github_Logo.MaximumSize = New Size(50, 50)
+        github_Logo.Name = "github_Logo"
+        github_Logo.Size = New Size(23, 23)
+        github_Logo.SizeMode = PictureBoxSizeMode.Zoom
+        github_Logo.TabIndex = 48
+        github_Logo.TabStop = False
         ' 
         ' Xerox_NVM_Automation_Hub
         ' 
@@ -289,11 +290,13 @@ Partial Class Xerox_NVM_Automation_Hub
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ClientSize = New Size(437, 822)
+        ClientSize = New Size(437, 661)
+        Controls.Add(github_Logo)
         Controls.Add(OpenPWSLockSettings)
         Controls.Add(Version_Label)
         Controls.Add(Group_DiagnosticTools)
         Controls.Add(Group_NVMScript)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "Xerox_NVM_Automation_Hub"
         Padding = New Padding(12)
         StartPosition = FormStartPosition.CenterScreen
@@ -302,6 +305,7 @@ Partial Class Xerox_NVM_Automation_Hub
         Group_NVMScript.PerformLayout()
         Group_DiagnosticTools.ResumeLayout(False)
         Group_DiagnosticTools.PerformLayout()
+        CType(github_Logo, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -310,7 +314,6 @@ Partial Class Xerox_NVM_Automation_Hub
     Friend WithEvents lbxWriteNVMScript As ListBox
     Friend WithEvents lbxTimestamps As ListBox
     Friend WithEvents gbxNVMCleaningTools As GroupBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents R0C0 As ListBox
     Friend WithEvents R2C5 As ListBox
     Friend WithEvents R1C5 As ListBox
@@ -367,6 +370,6 @@ Partial Class Xerox_NVM_Automation_Hub
     Friend WithEvents NVMScriptsDropdown As ComboBox
     Friend WithEvents Version_Label As Label
     Friend WithEvents OpenPWSLockSettings As Button
-    Friend WithEvents Process1 As Process
+    Friend WithEvents github_Logo As PictureBox
 
 End Class
