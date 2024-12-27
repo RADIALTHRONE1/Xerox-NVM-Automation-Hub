@@ -459,11 +459,9 @@ Public Class ModifyNVMForm
 
     End Sub
 
-
-
-
-
-
+    '========================================
+    '================ Buttons ===============
+    '========================================
 
     Private Sub DataA_ImportSingle_Click(sender As Object, e As EventArgs) Handles DataA_ImportSingle.Click
         If ckbCleanNVM1.Checked = True Then
