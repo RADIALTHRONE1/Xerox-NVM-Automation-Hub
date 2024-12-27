@@ -1,11 +1,5 @@
-﻿Imports System.ComponentModel
-Imports System.Drawing.Drawing2D
-Imports System.IO
-Imports System.Reflection.PortableExecutable
-Imports System.Resources
+﻿Imports System.IO
 Imports System.Text
-Imports System.Windows.Forms.Design
-Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Xerox_NVM_Automation_Hub
 
@@ -14,8 +8,6 @@ Public Class Xerox_NVM_Automation_Hub
     Public encodingASCII As Encoding = System.Text.Encoding.ASCII
 
     Public PWSLockProcess() As Process = Process.GetProcessesByName("PWSLock")
-
-
 
     Public TimestampFirst As Boolean = True
     Public TimestampCount As Integer = 0
@@ -27,15 +19,19 @@ Public Class Xerox_NVM_Automation_Hub
     Declare Sub Sleep Lib "kernel32.dll" (ByVal milliseconds As Long)
 
     Private Sub Xerox_NVM_Automation_Hub_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Not My.Settings.Version = My.Application.Info.Version.ToString Then
+            My.Settings.Upgrade()
+            My.Settings.Version = My.Application.Info.Version.ToString
+            My.Settings.Save()
+        End If
+
         My.Settings.CurrentEXEPath = Application.ExecutablePath
 
-        Dim Version As String = "v" & My.Application.Info.Version.ToString
-        Version_Label.Text = Version
+        Version_Label.Text = "v" & My.Application.Info.Version.ToString
+        github_Logo.Image = My.Resources.ResourceManager.GetObject("github-mark")
 
         PopulateDiagnosticTools()
         PopulateNVMDirectories()
-
-        github_Logo.Image = My.Resources.ResourceManager.GetObject("github-mark")
 
         If Environment.Is64BitOperatingSystem And Not Debugger.IsAttached Then
             MsgBox("It looks like you're using a 64-Bit Operating System" & vbCrLf &
@@ -48,6 +44,8 @@ Public Class Xerox_NVM_Automation_Hub
     '========== Check for PWS Lock ==========
     '========================================
 
+    'This checks to see if the PWSLock process is running. This is because the Diagnostic Tool won't start if PWSLock isn't running
+    'If it's not running, it will start PWSLock and offer to autofill your password
     Function RunPWSLock()
         If (My.Computer.FileSystem.FileExists(My.Settings.PWSLock_Path)) And (PWSLockProcess.Count < 1) = True Then
             Dim StartPWSLock As Integer = Shell(My.Settings.PWSLock_Path, AppWinStyle.NormalFocus)
@@ -80,6 +78,7 @@ Public Class Xerox_NVM_Automation_Hub
             OpenPWSLockSettings.PerformClick()
             Return False
         End If
+        Return True
     End Function
 
     '========================================
@@ -97,7 +96,6 @@ Public Class Xerox_NVM_Automation_Hub
             MsgBox("You haven't set up any of the Diagnostic Tools yet!")
             Exit Sub
         End If
-
         If RunPWSLock() = False Then
             Exit Sub
         End If
@@ -217,6 +215,13 @@ Public Class Xerox_NVM_Automation_Hub
         If Not My.Computer.FileSystem.DirectoryExists(My.Settings.NVMScriptDirectories_Paths(NVMScriptDirectorySelected)) Then
             MsgBox("Can't find the selected NVM Script Directory")
             Return False
+        End If
+
+        If Not My.Computer.FileSystem.DirectoryExists(My.Settings.NVMScriptDirectories_Paths(NVMScriptDirectorySelected) & "\Done") Then
+            My.Computer.FileSystem.CreateDirectory(My.Settings.NVMScriptDirectories_Paths(NVMScriptDirectorySelected) & "\Done")
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(My.Settings.NVMScriptDirectories_Paths(NVMScriptDirectorySelected) & "\SaveFiles") Then
+            My.Computer.FileSystem.CreateDirectory(My.Settings.NVMScriptDirectories_Paths(NVMScriptDirectorySelected) & "\SaveFiles")
         End If
 
         For Each foundFile As String In My.Computer.FileSystem.GetFiles(My.Settings.NVMScriptDirectories_Paths(NVMScriptDirectorySelected), FileIO.SearchOption.SearchTopLevelOnly, "*.csv")
@@ -614,7 +619,13 @@ Public Class Xerox_NVM_Automation_Hub
         RunDiagnosticTool("Normal")
     End Sub
     Private Sub DiagnosticTool_Run_Auto_Click(sender As Object, e As EventArgs) Handles DiagnosticTool_Run_Auto.Click
-        RunDiagnosticTool("Automatic")
+        Dim AreYouSure = MsgBox("This will run the automatic NVM reading system." & vbCrLf &
+                                "You will be unable to use the PC while this is running." & vbCrLf &
+                                "(Remember to open an interlock on the machine, and plug in your laptop)" & vbCrLf & vbCrLf &
+                                "Are you sure you want to do this?", MsgBoxStyle.YesNo)
+        If AreYouSure = MsgBoxResult.Yes Then
+            RunDiagnosticTool("Automatic")
+        End If
     End Sub
     Private Sub NVMScripts_AddNew_Click(sender As Object, e As EventArgs) Handles NVMScripts_AddNew.Click
         AddNewNVMScriptDirectory()

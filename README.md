@@ -1,9 +1,9 @@
-v1.0.0.0 (or thereabouts) of the Xerox NVM Automation Tool.
+v1.0.0.1 of the Xerox NVM Automation Tool.
 
 
 This will emulate all of the necessary key presses needed to open the PWS Diagnostic Tool, open an NVM Script to read, Save the read values, and repeat the process for as many scripts as are present.
 
-I've included a folder of all the possible NVM values. Yes, all of them. 1,998 CSV files each with 500 values. You can use your own folders, just make sure that you have the 'Done' and 'SaveFiles' folders like the included one. (I'll probably fix this later).
+I've included a folder of all the possible NVM values. Yes, all of them. 1,998 CSV files each with 500 values. You can use your own files, just throw whatever CSV files you want to process into a folder.
 
 As a warning, running every file will take a LONG TIME. Blank files (with no values found) take around 30 seconds to process; which means that 1,998 blank files would take around 16 hours (and files with values to read might take longer iirc).
 
