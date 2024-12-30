@@ -1,6 +1,4 @@
-v1.1.0.0 of the Xerox NVM Automation Tool.
-
-Please note that this will only be useful to Xerox Technicians. It doesn't provide any of their tools, only uses them. Techs, this uses the PWS Diagnostic Tools you run for downloading firmware and reading NVM scripts. PWSLock is required.
+v1.0.5.0 of the Xerox NVM Automation Tool.
 
 
 This will emulate all of the necessary key presses needed to open the PWS Diagnostic Tool, open an NVM Script to read, Save the read values, and repeat the process for as many scripts as are present.
@@ -27,5 +25,3 @@ So, place the files in their forever homes before adding or setting any info. Ne
 
 As of v1.0.5.0, I've included the ability to parse out the .accdb (Access Database) files that the Diagnostic Tool creates, allowing you to cleanup empty values and even compare 2 sets of data.
 This does have some weird requirement of needing 'Microsoft.ACE.OLEDB.12.0', which is an Access Database Engine. Thanks to the InternetArchive, I've included copies of the installs in the resources folder (which full disclosure I haven't tested myself).
-
-As of v1.1.0.0, I've included the tools to compare the cleaned up CSV files.
