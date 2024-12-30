@@ -655,4 +655,10 @@ Public Class Xerox_NVM_Automation_Hub
         Me.Hide()
         ModifyNVMForm.Focus()
     End Sub
+
+    Private Sub OpenCSVForm_Click(sender As Object, e As EventArgs) Handles OpenCSVForm.Click
+        CompareCSVFiles_Form.Show()
+        Me.Hide()
+        CompareCSVFiles_Form.Focus()
+    End Sub
 End Class

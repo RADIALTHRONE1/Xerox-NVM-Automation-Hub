@@ -11,8 +11,8 @@
     <PackageProjectUrl>https://github.com/RADIALTHRONE1/Xerox-NVM-Automation-Hub</PackageProjectUrl>
     <PackageIcon>X.png</PackageIcon>
     <ApplicationIcon>X.ico</ApplicationIcon>
-	  <AssemblyVersion>1.0.5.0</AssemblyVersion>
-	  <FileVersion>1.0.5.0</FileVersion>
+	  <AssemblyVersion>1.1.0.0</AssemblyVersion>
+	  <FileVersion>1.1.0.0</FileVersion>
 	  <ImportedNamespaces>System.Data=False,System.Drawing=False,System.Windows.Forms=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,Xerox NVM Automation Hub=True</ImportedNamespaces>
   </PropertyGroup>
 

@@ -22,178 +22,54 @@ Partial Class CompareCSVFiles_Form
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        gbxNVMCleaningTools = New GroupBox()
-        Button1 = New Button()
-        R0C0 = New ListBox()
-        lbxWriteNVMScript = New ListBox()
-        R2C5 = New ListBox()
-        R1C5 = New ListBox()
-        R2C0 = New ListBox()
-        R1C0 = New ListBox()
-        D2C2 = New ListBox()
-        D1C2 = New ListBox()
-        D2C5 = New ListBox()
-        D2C1 = New ListBox()
-        D1C5 = New ListBox()
-        D1C1 = New ListBox()
+        btn_SaveComparison_Dif = New Button()
         txbImportCSVData2 = New TextBox()
         txbImportCSVData1 = New TextBox()
-        btnCompareCSVData = New Button()
+        btn_Compare_Dif = New Button()
         btnImportCSVDataB = New Button()
         btnImportCSVDataA = New Button()
-        btnNVMHelp = New Button()
-        gbxNVMCleaningTools.SuspendLayout()
+        GroupBox1 = New GroupBox()
+        DataA_DataGrid = New DataGridView()
+        DataA_ChainLinkGrid = New DataGridViewTextBoxColumn()
+        DataA_NVMGrid = New DataGridViewTextBoxColumn()
+        DataB_DataGrid = New DataGridView()
+        DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn4 = New DataGridViewTextBoxColumn()
+        DataC_Dif_Comparison = New DataGridView()
+        DataGridViewTextBoxColumn5 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn8 = New DataGridViewTextBoxColumn()
+        Column1 = New DataGridViewTextBoxColumn()
+        GroupBox2 = New GroupBox()
+        GroupBox3 = New GroupBox()
+        GroupBox4 = New GroupBox()
+        DataC_Sim_Comparison = New DataGridView()
+        DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn6 = New DataGridViewTextBoxColumn()
+        btn_Compare_Sim = New Button()
+        btn_SaveComparison_Sim = New Button()
+        GroupBox1.SuspendLayout()
+        CType(DataA_DataGrid, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataB_DataGrid, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataC_Dif_Comparison, ComponentModel.ISupportInitialize).BeginInit()
+        GroupBox2.SuspendLayout()
+        GroupBox3.SuspendLayout()
+        GroupBox4.SuspendLayout()
+        CType(DataC_Sim_Comparison, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' gbxNVMCleaningTools
+        ' btn_SaveComparison_Dif
         ' 
-        gbxNVMCleaningTools.Controls.Add(Button1)
-        gbxNVMCleaningTools.Controls.Add(R0C0)
-        gbxNVMCleaningTools.Controls.Add(lbxWriteNVMScript)
-        gbxNVMCleaningTools.Controls.Add(R2C5)
-        gbxNVMCleaningTools.Controls.Add(R1C5)
-        gbxNVMCleaningTools.Controls.Add(R2C0)
-        gbxNVMCleaningTools.Controls.Add(R1C0)
-        gbxNVMCleaningTools.Controls.Add(D2C2)
-        gbxNVMCleaningTools.Controls.Add(D1C2)
-        gbxNVMCleaningTools.Controls.Add(D2C5)
-        gbxNVMCleaningTools.Controls.Add(D2C1)
-        gbxNVMCleaningTools.Controls.Add(D1C5)
-        gbxNVMCleaningTools.Controls.Add(D1C1)
-        gbxNVMCleaningTools.Controls.Add(txbImportCSVData2)
-        gbxNVMCleaningTools.Controls.Add(txbImportCSVData1)
-        gbxNVMCleaningTools.Controls.Add(btnCompareCSVData)
-        gbxNVMCleaningTools.Controls.Add(btnImportCSVDataB)
-        gbxNVMCleaningTools.Controls.Add(btnImportCSVDataA)
-        gbxNVMCleaningTools.Controls.Add(btnNVMHelp)
-        gbxNVMCleaningTools.Location = New Point(12, 12)
-        gbxNVMCleaningTools.Name = "gbxNVMCleaningTools"
-        gbxNVMCleaningTools.Size = New Size(730, 503)
-        gbxNVMCleaningTools.TabIndex = 39
-        gbxNVMCleaningTools.TabStop = False
-        gbxNVMCleaningTools.Text = "NVM Cleaning/Comparing Tools"
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(11, 445)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(75, 23)
-        Button1.TabIndex = 51
-        Button1.Text = "Button1"
-        Button1.UseVisualStyleBackColor = True
-        ' 
-        ' R0C0
-        ' 
-        R0C0.FormattingEnabled = True
-        R0C0.ItemHeight = 15
-        R0C0.Location = New Point(467, 346)
-        R0C0.Name = "R0C0"
-        R0C0.Size = New Size(222, 94)
-        R0C0.TabIndex = 50
-        ' 
-        ' lbxWriteNVMScript
-        ' 
-        lbxWriteNVMScript.FormattingEnabled = True
-        lbxWriteNVMScript.ItemHeight = 15
-        lbxWriteNVMScript.Location = New Point(321, 35)
-        lbxWriteNVMScript.Name = "lbxWriteNVMScript"
-        lbxWriteNVMScript.ScrollAlwaysVisible = True
-        lbxWriteNVMScript.Size = New Size(140, 139)
-        lbxWriteNVMScript.TabIndex = 13
-        ' 
-        ' R2C5
-        ' 
-        R2C5.FormattingEnabled = True
-        R2C5.ItemHeight = 15
-        R2C5.Location = New Point(341, 346)
-        R2C5.Name = "R2C5"
-        R2C5.Size = New Size(120, 94)
-        R2C5.TabIndex = 49
-        ' 
-        ' R1C5
-        ' 
-        R1C5.FormattingEnabled = True
-        R1C5.ItemHeight = 15
-        R1C5.Location = New Point(113, 345)
-        R1C5.Name = "R1C5"
-        R1C5.Size = New Size(120, 94)
-        R1C5.TabIndex = 48
-        ' 
-        ' R2C0
-        ' 
-        R2C0.FormattingEnabled = True
-        R2C0.ItemHeight = 15
-        R2C0.Location = New Point(239, 346)
-        R2C0.Name = "R2C0"
-        R2C0.Size = New Size(96, 94)
-        R2C0.TabIndex = 47
-        ' 
-        ' R1C0
-        ' 
-        R1C0.FormattingEnabled = True
-        R1C0.ItemHeight = 15
-        R1C0.Location = New Point(11, 345)
-        R1C0.Name = "R1C0"
-        R1C0.Size = New Size(96, 94)
-        R1C0.TabIndex = 46
-        ' 
-        ' D2C2
-        ' 
-        D2C2.FormattingEnabled = True
-        D2C2.ItemHeight = 15
-        D2C2.Location = New Point(62, 245)
-        D2C2.Name = "D2C2"
-        D2C2.Size = New Size(45, 94)
-        D2C2.TabIndex = 45
-        ' 
-        ' D1C2
-        ' 
-        D1C2.FormattingEnabled = True
-        D1C2.ItemHeight = 15
-        D1C2.Location = New Point(62, 145)
-        D1C2.Name = "D1C2"
-        D1C2.Size = New Size(45, 94)
-        D1C2.TabIndex = 44
-        ' 
-        ' D2C5
-        ' 
-        D2C5.FormattingEnabled = True
-        D2C5.ItemHeight = 15
-        D2C5.Location = New Point(113, 246)
-        D2C5.Name = "D2C5"
-        D2C5.Size = New Size(184, 94)
-        D2C5.TabIndex = 43
-        ' 
-        ' D2C1
-        ' 
-        D2C1.FormattingEnabled = True
-        D2C1.ItemHeight = 15
-        D2C1.Location = New Point(11, 245)
-        D2C1.Name = "D2C1"
-        D2C1.Size = New Size(45, 94)
-        D2C1.TabIndex = 42
-        ' 
-        ' D1C5
-        ' 
-        D1C5.FormattingEnabled = True
-        D1C5.ItemHeight = 15
-        D1C5.Location = New Point(113, 146)
-        D1C5.Name = "D1C5"
-        D1C5.Size = New Size(184, 94)
-        D1C5.TabIndex = 41
-        ' 
-        ' D1C1
-        ' 
-        D1C1.FormattingEnabled = True
-        D1C1.ItemHeight = 15
-        D1C1.Location = New Point(11, 145)
-        D1C1.Name = "D1C1"
-        D1C1.Size = New Size(45, 94)
-        D1C1.TabIndex = 38
+        btn_SaveComparison_Dif.Location = New Point(15, 473)
+        btn_SaveComparison_Dif.Name = "btn_SaveComparison_Dif"
+        btn_SaveComparison_Dif.Size = New Size(300, 23)
+        btn_SaveComparison_Dif.TabIndex = 51
+        btn_SaveComparison_Dif.Text = "Save Difference Comparison"
+        btn_SaveComparison_Dif.UseVisualStyleBackColor = True
         ' 
         ' txbImportCSVData2
         ' 
-        txbImportCSVData2.Location = New Point(157, 87)
+        txbImportCSVData2.Location = New Point(156, 22)
         txbImportCSVData2.Name = "txbImportCSVData2"
         txbImportCSVData2.ReadOnly = True
         txbImportCSVData2.Size = New Size(140, 23)
@@ -201,24 +77,24 @@ Partial Class CompareCSVFiles_Form
         ' 
         ' txbImportCSVData1
         ' 
-        txbImportCSVData1.Location = New Point(11, 87)
+        txbImportCSVData1.Location = New Point(154, 22)
         txbImportCSVData1.Name = "txbImportCSVData1"
         txbImportCSVData1.ReadOnly = True
         txbImportCSVData1.Size = New Size(140, 23)
         txbImportCSVData1.TabIndex = 39
         ' 
-        ' btnCompareCSVData
+        ' btn_Compare_Dif
         ' 
-        btnCompareCSVData.Location = New Point(11, 116)
-        btnCompareCSVData.Name = "btnCompareCSVData"
-        btnCompareCSVData.Size = New Size(286, 23)
-        btnCompareCSVData.TabIndex = 38
-        btnCompareCSVData.Text = "Compare Sets A and B"
-        btnCompareCSVData.UseVisualStyleBackColor = True
+        btn_Compare_Dif.Location = New Point(6, 22)
+        btn_Compare_Dif.Name = "btn_Compare_Dif"
+        btn_Compare_Dif.Size = New Size(288, 23)
+        btn_Compare_Dif.TabIndex = 38
+        btn_Compare_Dif.Text = "Compare By Differences"
+        btn_Compare_Dif.UseVisualStyleBackColor = True
         ' 
         ' btnImportCSVDataB
         ' 
-        btnImportCSVDataB.Location = New Point(157, 58)
+        btnImportCSVDataB.Location = New Point(6, 22)
         btnImportCSVDataB.Name = "btnImportCSVDataB"
         btnImportCSVDataB.Size = New Size(140, 23)
         btnImportCSVDataB.TabIndex = 37
@@ -227,22 +103,182 @@ Partial Class CompareCSVFiles_Form
         ' 
         ' btnImportCSVDataA
         ' 
-        btnImportCSVDataA.Location = New Point(11, 58)
+        btnImportCSVDataA.Location = New Point(6, 22)
         btnImportCSVDataA.Name = "btnImportCSVDataA"
         btnImportCSVDataA.Size = New Size(140, 23)
         btnImportCSVDataA.TabIndex = 36
         btnImportCSVDataA.Text = "Import CSV Data A"
         btnImportCSVDataA.UseVisualStyleBackColor = True
         ' 
-        ' btnNVMHelp
+        ' GroupBox1
         ' 
-        btnNVMHelp.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
-        btnNVMHelp.Location = New Point(247, 16)
-        btnNVMHelp.Name = "btnNVMHelp"
-        btnNVMHelp.Size = New Size(50, 23)
-        btnNVMHelp.TabIndex = 26
-        btnNVMHelp.Text = "Help"
-        btnNVMHelp.UseVisualStyleBackColor = True
+        GroupBox1.AutoSize = True
+        GroupBox1.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        GroupBox1.Controls.Add(DataA_DataGrid)
+        GroupBox1.Controls.Add(btnImportCSVDataA)
+        GroupBox1.Controls.Add(txbImportCSVData1)
+        GroupBox1.Location = New Point(15, 15)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(300, 223)
+        GroupBox1.TabIndex = 52
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "CSV Dataset A"
+        ' 
+        ' DataA_DataGrid
+        ' 
+        DataA_DataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataA_DataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataA_DataGrid.Columns.AddRange(New DataGridViewColumn() {DataA_ChainLinkGrid, DataA_NVMGrid})
+        DataA_DataGrid.Location = New Point(6, 51)
+        DataA_DataGrid.Name = "DataA_DataGrid"
+        DataA_DataGrid.Size = New Size(288, 150)
+        DataA_DataGrid.TabIndex = 50
+        ' 
+        ' DataA_ChainLinkGrid
+        ' 
+        DataA_ChainLinkGrid.HeaderText = "ChainLink"
+        DataA_ChainLinkGrid.Name = "DataA_ChainLinkGrid"
+        DataA_ChainLinkGrid.ReadOnly = True
+        ' 
+        ' DataA_NVMGrid
+        ' 
+        DataA_NVMGrid.HeaderText = "NVM Value"
+        DataA_NVMGrid.Name = "DataA_NVMGrid"
+        DataA_NVMGrid.ReadOnly = True
+        ' 
+        ' DataB_DataGrid
+        ' 
+        DataB_DataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataB_DataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataB_DataGrid.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn1, DataGridViewTextBoxColumn4})
+        DataB_DataGrid.Location = New Point(6, 51)
+        DataB_DataGrid.Name = "DataB_DataGrid"
+        DataB_DataGrid.Size = New Size(288, 150)
+        DataB_DataGrid.TabIndex = 53
+        ' 
+        ' DataGridViewTextBoxColumn1
+        ' 
+        DataGridViewTextBoxColumn1.HeaderText = "ChainLink"
+        DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        DataGridViewTextBoxColumn1.ReadOnly = True
+        ' 
+        ' DataGridViewTextBoxColumn4
+        ' 
+        DataGridViewTextBoxColumn4.HeaderText = "NVM Value"
+        DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        DataGridViewTextBoxColumn4.ReadOnly = True
+        ' 
+        ' DataC_Dif_Comparison
+        ' 
+        DataC_Dif_Comparison.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataC_Dif_Comparison.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataC_Dif_Comparison.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn5, DataGridViewTextBoxColumn8, Column1})
+        DataC_Dif_Comparison.Location = New Point(6, 51)
+        DataC_Dif_Comparison.Name = "DataC_Dif_Comparison"
+        DataC_Dif_Comparison.Size = New Size(288, 150)
+        DataC_Dif_Comparison.TabIndex = 54
+        ' 
+        ' DataGridViewTextBoxColumn5
+        ' 
+        DataGridViewTextBoxColumn5.HeaderText = "ChainLink"
+        DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        DataGridViewTextBoxColumn5.ReadOnly = True
+        ' 
+        ' DataGridViewTextBoxColumn8
+        ' 
+        DataGridViewTextBoxColumn8.HeaderText = "NVM Values A"
+        DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        DataGridViewTextBoxColumn8.ReadOnly = True
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "NVM Values B"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(btnImportCSVDataB)
+        GroupBox2.Controls.Add(txbImportCSVData2)
+        GroupBox2.Controls.Add(DataB_DataGrid)
+        GroupBox2.Location = New Point(321, 15)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(300, 223)
+        GroupBox2.TabIndex = 55
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "CSV Dataset B"
+        ' 
+        ' GroupBox3
+        ' 
+        GroupBox3.AutoSize = True
+        GroupBox3.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        GroupBox3.Controls.Add(btn_Compare_Dif)
+        GroupBox3.Controls.Add(DataC_Dif_Comparison)
+        GroupBox3.Location = New Point(15, 244)
+        GroupBox3.Name = "GroupBox3"
+        GroupBox3.Size = New Size(300, 223)
+        GroupBox3.TabIndex = 56
+        GroupBox3.TabStop = False
+        GroupBox3.Text = "Difference Comparison"
+        ' 
+        ' GroupBox4
+        ' 
+        GroupBox4.AutoSize = True
+        GroupBox4.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        GroupBox4.Controls.Add(DataC_Sim_Comparison)
+        GroupBox4.Controls.Add(btn_Compare_Sim)
+        GroupBox4.Location = New Point(321, 244)
+        GroupBox4.Name = "GroupBox4"
+        GroupBox4.Size = New Size(300, 223)
+        GroupBox4.TabIndex = 57
+        GroupBox4.TabStop = False
+        GroupBox4.Text = "Similarity Comparison"
+        ' 
+        ' DataC_Sim_Comparison
+        ' 
+        DataC_Sim_Comparison.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataC_Sim_Comparison.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataC_Sim_Comparison.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn2, DataGridViewTextBoxColumn3, DataGridViewTextBoxColumn6})
+        DataC_Sim_Comparison.Location = New Point(6, 51)
+        DataC_Sim_Comparison.Name = "DataC_Sim_Comparison"
+        DataC_Sim_Comparison.Size = New Size(288, 150)
+        DataC_Sim_Comparison.TabIndex = 58
+        ' 
+        ' DataGridViewTextBoxColumn2
+        ' 
+        DataGridViewTextBoxColumn2.HeaderText = "ChainLink"
+        DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        DataGridViewTextBoxColumn2.ReadOnly = True
+        ' 
+        ' DataGridViewTextBoxColumn3
+        ' 
+        DataGridViewTextBoxColumn3.HeaderText = "NVM Values A"
+        DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        DataGridViewTextBoxColumn3.ReadOnly = True
+        ' 
+        ' DataGridViewTextBoxColumn6
+        ' 
+        DataGridViewTextBoxColumn6.HeaderText = "NVM Values B"
+        DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        DataGridViewTextBoxColumn6.ReadOnly = True
+        ' 
+        ' btn_Compare_Sim
+        ' 
+        btn_Compare_Sim.Location = New Point(6, 22)
+        btn_Compare_Sim.Name = "btn_Compare_Sim"
+        btn_Compare_Sim.Size = New Size(288, 23)
+        btn_Compare_Sim.TabIndex = 1
+        btn_Compare_Sim.Text = "Compare By Similarities"
+        btn_Compare_Sim.UseVisualStyleBackColor = True
+        ' 
+        ' btn_SaveComparison_Sim
+        ' 
+        btn_SaveComparison_Sim.Location = New Point(321, 473)
+        btn_SaveComparison_Sim.Name = "btn_SaveComparison_Sim"
+        btn_SaveComparison_Sim.Size = New Size(300, 23)
+        btn_SaveComparison_Sim.TabIndex = 58
+        btn_SaveComparison_Sim.Text = "Save Similarity Comparison"
+        btn_SaveComparison_Sim.UseVisualStyleBackColor = True
         ' 
         ' CompareCSVFiles_Form
         ' 
@@ -250,33 +286,54 @@ Partial Class CompareCSVFiles_Form
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ClientSize = New Size(875, 574)
-        Controls.Add(gbxNVMCleaningTools)
+        ClientSize = New Size(833, 567)
+        Controls.Add(btn_SaveComparison_Sim)
+        Controls.Add(GroupBox4)
+        Controls.Add(GroupBox3)
+        Controls.Add(GroupBox2)
+        Controls.Add(GroupBox1)
+        Controls.Add(btn_SaveComparison_Dif)
         Name = "CompareCSVFiles_Form"
+        Padding = New Padding(12)
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Compare CSV Files"
-        gbxNVMCleaningTools.ResumeLayout(False)
-        gbxNVMCleaningTools.PerformLayout()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
+        CType(DataA_DataGrid, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataB_DataGrid, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataC_Dif_Comparison, ComponentModel.ISupportInitialize).EndInit()
+        GroupBox2.ResumeLayout(False)
+        GroupBox2.PerformLayout()
+        GroupBox3.ResumeLayout(False)
+        GroupBox4.ResumeLayout(False)
+        CType(DataC_Sim_Comparison, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
-
-    Friend WithEvents gbxNVMCleaningTools As GroupBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents R0C0 As ListBox
-    Friend WithEvents lbxWriteNVMScript As ListBox
-    Friend WithEvents R2C5 As ListBox
-    Friend WithEvents R1C5 As ListBox
-    Friend WithEvents R2C0 As ListBox
-    Friend WithEvents R1C0 As ListBox
-    Friend WithEvents D2C2 As ListBox
-    Friend WithEvents D1C2 As ListBox
-    Friend WithEvents D2C5 As ListBox
-    Friend WithEvents D2C1 As ListBox
-    Friend WithEvents D1C5 As ListBox
-    Friend WithEvents D1C1 As ListBox
+    Friend WithEvents btn_SaveComparison_Dif As Button
     Friend WithEvents txbImportCSVData2 As TextBox
     Friend WithEvents txbImportCSVData1 As TextBox
-    Friend WithEvents btnCompareCSVData As Button
+    Friend WithEvents btn_Compare_Dif As Button
     Friend WithEvents btnImportCSVDataB As Button
     Friend WithEvents btnImportCSVDataA As Button
-    Friend WithEvents btnNVMHelp As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents DataA_DataGrid As DataGridView
+    Friend WithEvents DataB_DataGrid As DataGridView
+    Friend WithEvents DataC_Dif_Comparison As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataA_ChainLinkGrid As DataGridViewTextBoxColumn
+    Friend WithEvents DataA_NVMGrid As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents btn_Compare_Sim As Button
+    Friend WithEvents DataC_Sim_Comparison As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents btn_SaveComparison_Sim As Button
 End Class

@@ -31,6 +31,7 @@ Partial Class Xerox_NVM_Automation_Hub
         DiagnosticTool_Run_Normal = New Button()
         DiagnosticTool_Run_Auto = New Button()
         Group_NVMScript = New GroupBox()
+        OpenCSVForm = New Button()
         NVMScripts_CurrentPath = New Label()
         Label1 = New Label()
         NVMScripts_Reset = New Button()
@@ -134,6 +135,15 @@ Partial Class Xerox_NVM_Automation_Hub
         Group_NVMScript.TabIndex = 43
         Group_NVMScript.TabStop = False
         Group_NVMScript.Text = "NVM Script Directory (For Auto Reading)"
+        ' 
+        ' OpenCSVForm
+        ' 
+        OpenCSVForm.Location = New Point(95, 656)
+        OpenCSVForm.Name = "OpenCSVForm"
+        OpenCSVForm.Size = New Size(164, 23)
+        OpenCSVForm.TabIndex = 40
+        OpenCSVForm.Text = "Compare Cleaned CSVs"
+        OpenCSVForm.UseVisualStyleBackColor = True
         ' 
         ' NVMScripts_CurrentPath
         ' 
@@ -291,7 +301,7 @@ Partial Class Xerox_NVM_Automation_Hub
         OpenModifyNVMForm.Name = "OpenModifyNVMForm"
         OpenModifyNVMForm.Size = New Size(164, 23)
         OpenModifyNVMForm.TabIndex = 49
-        OpenModifyNVMForm.Text = "Clean/Compare NVM Reads"
+        OpenModifyNVMForm.Text = "Clean NVM Reads"
         OpenModifyNVMForm.UseVisualStyleBackColor = True
         ' 
         ' Xerox_NVM_Automation_Hub
@@ -300,7 +310,8 @@ Partial Class Xerox_NVM_Automation_Hub
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         AutoSizeMode = AutoSizeMode.GrowAndShrink
-        ClientSize = New Size(437, 661)
+        ClientSize = New Size(437, 679)
+        Controls.Add(OpenCSVForm)
         Controls.Add(OpenModifyNVMForm)
         Controls.Add(github_Logo)
         Controls.Add(OpenPWSLockSettings)
@@ -383,5 +394,6 @@ Partial Class Xerox_NVM_Automation_Hub
     Friend WithEvents OpenPWSLockSettings As Button
     Friend WithEvents github_Logo As PictureBox
     Friend WithEvents OpenModifyNVMForm As Button
+    Friend WithEvents OpenCSVForm As Button
 
 End Class
