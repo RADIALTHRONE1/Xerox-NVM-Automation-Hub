@@ -1,5 +1,7 @@
 v1.1.0.0 of the Xerox NVM Automation Tool.
 
+Please note that this will only be useful to Xerox Technicians. It doesn't provide any of their tools, only uses them. Techs, this uses the PWS Diagnostic Tools you run for downloading firmware and reading NVM scripts. PWSLock is required.
+
 
 This will emulate all of the necessary key presses needed to open the PWS Diagnostic Tool, open an NVM Script to read, Save the read values, and repeat the process for as many scripts as are present.
 
