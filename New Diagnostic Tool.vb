@@ -35,7 +35,10 @@
             My.Settings.DiagnosticTools_TitleBar.Add(MachineTitleBar.Trim)
             DiagnosticTool_CurrentPath.ReadOnly = True
             Xerox_NVM_Automation_Hub.PopulateDiagnosticTools()
+
+            Xerox_NVM_Automation_Hub.Show()
             Me.Hide()
+            Xerox_NVM_Automation_Hub.Focus()
         ElseIf Updating = True Then
             My.Settings.DiagnosticTools_Paths.RemoveAt(UpdatingIndex)
             My.Settings.DiagnosticTools_Paths.Insert(UpdatingIndex, SelectedToolPath)
@@ -47,7 +50,10 @@
             My.Settings.DiagnosticTools_TitleBar.Insert(UpdatingIndex, MachineTitleBar.Trim)
             DiagnosticTool_CurrentPath.ReadOnly = True
             Xerox_NVM_Automation_Hub.PopulateDiagnosticTools()
+
+            Xerox_NVM_Automation_Hub.Show()
             Me.Hide()
+            Xerox_NVM_Automation_Hub.Focus()
         End If
     End Sub
 
